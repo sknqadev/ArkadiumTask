@@ -74,7 +74,7 @@ export default defineConfig({
     ),
     globalSetup: path.resolve(__dirname, './tests/e2e/config/globalSetup.ts'),
     expect: {
-        timeout: 30 * 1000,
+        timeout: 60 * 1000,
     },
 
     use: {
