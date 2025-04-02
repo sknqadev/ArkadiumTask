@@ -15,6 +15,7 @@ This is an end-to-end testing project built using **Playwright + TypeScript** to
 - Page Object Model (POM)
 - Modular Fixtures
 - Storage State Handling for Login
+- Eslint, Prettier, and Husky for code cleanliness
 - Tags: `@smoke`, `@regression`
 
 ---
