@@ -73,6 +73,9 @@ export default defineConfig({
         './tests/e2e/config/globalTeardown.ts'
     ),
     globalSetup: path.resolve(__dirname, './tests/e2e/config/globalSetup.ts'),
+    expect: {
+        timeout: 30 * 1000,
+    },
 
     use: {
         baseURL: 'https://www.arkadium.com/',
