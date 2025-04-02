@@ -6,11 +6,9 @@ test.describe('Social Tests', () => {
     test(
         'Check leaderboard opens with players results',
         { tag: '@smoke' },
-        async ({ homePage, loggedIn }) => {
-            void loggedIn
+        async ({ homePage }) => {
             const gamePage = await homePage.gotoGame(ExpectedData.gameToAccess)
             await gamePage.openLeaderboard()
-
             await expect(gamePage.firstLeaderboardPlayer).toBeVisible()
         }
     )

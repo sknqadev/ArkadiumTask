@@ -27,7 +27,9 @@ export class HomePage extends BasePage {
      */
     async gotoBest(): Promise<BestPage> {
         await Promise.all([
-            this.page.waitForURL(`**${Routes.BEST_GAMES}`),
+            this.page.waitForURL(`**${Routes.BEST_GAMES}`, {
+                waitUntil: 'domcontentloaded',
+            }),
             this.bestLink.click(),
         ])
 
@@ -55,6 +57,6 @@ export class HomePage extends BasePage {
      * Opens the homepage route.
      */
     async open() {
-        await this.page.goto(Routes.HOME, { waitUntil: 'domcontentloaded' })
+        await this.page.goto(Routes.HOME)
     }
 }

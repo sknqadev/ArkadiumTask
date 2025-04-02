@@ -1,7 +1,6 @@
 import { defineConfig, devices } from '@playwright/test'
 import dotenv from 'dotenv'
 import path from 'path'
-import fs from 'fs'
 
 dotenv.config({ path: path.resolve(__dirname, '.env') })
 
@@ -69,14 +68,16 @@ export default defineConfig({
     retries: process.env.CI ? 2 : 1,
     workers: process.env.CI ? 1 : 1,
     reporter: 'html',
-    globalTeardown: './tests/e2e/config/global-teardown.ts',
+    globalTeardown: path.resolve(
+        __dirname,
+        './tests/e2e/config/globalTeardown.ts'
+    ),
+    globalSetup: path.resolve(__dirname, './tests/e2e/config/globalSetup.ts'),
 
     use: {
         baseURL: 'https://www.arkadium.com/',
         trace: 'retry-with-trace',
-        storageState: fs.existsSync('./tests/e2e/storageState.json')
-            ? './tests/e2e/storageState.json'
-            : undefined,
+        storageState: './tests/e2e/config/storageState.json',
     },
 
     projects: filteredProjects,

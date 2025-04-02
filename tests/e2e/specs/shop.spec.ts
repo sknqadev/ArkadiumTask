@@ -3,10 +3,8 @@ import { test } from '../config/webContext.fixture'
 import * as ExpectedData from '../data/shop.data'
 
 test.describe('Shop Tests', () => {
-    test('Check prices', { tag: '@smoke' }, async ({ homePage, loggedIn }) => {
-        void loggedIn
+    test('Check prices', { tag: '@smoke' }, async ({ homePage }) => {
         const actualPrices = await homePage.getShopPrices()
-
         expect(actualPrices).toEqual(ExpectedData.shopPrices)
     })
 

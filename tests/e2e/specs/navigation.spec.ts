@@ -20,10 +20,8 @@ test.describe('Navigation Tests', () => {
                 testInfo.project.metadata?.mobile,
                 'Unsupported for Mobile Browsers'
             )
-
             const bestPage = await homePage.gotoBest()
             const actualTitles = await bestPage.getAllGameTitles()
-
             expect(actualTitles.sort()).toEqual(
                 ExpectedData.bestGamesTitles.sort()
             )
