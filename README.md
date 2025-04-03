@@ -46,6 +46,14 @@ ARKADIUM_EMAIL=your_email@example.com
 ARKADIUM_PASSWORD=your_secure_password
 ```
 
+### 4. Install Playwright Browsers
+
+```bash
+npx playwright install
+```
+
+
+
 ---
 
 ## 💡 How It Works
