@@ -44,6 +44,9 @@ You can use the .env.example as a guideline too
 ```env
 ARKADIUM_EMAIL=your_email@example.com
 ARKADIUM_PASSWORD=your_secure_password
+
+RUN_MODE=full
+#Options are (full|mobile|fast)
 ```
 
 ### 4. Install Playwright Browsers
